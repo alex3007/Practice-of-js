@@ -17,7 +17,7 @@
     }
 }
 
-.slider__slides {
+/*.slider__slides {
     height: 100%;
     position: relative;
     -webkit-animation: slide 10s infinite;
@@ -93,16 +93,6 @@ transition: all 4s;
 }
 
 
-
-#nav>ul{
-    position: relative;
-    
-    
-    
-     
-}
-
-
 *{
     
     margin: 0;
@@ -111,6 +101,14 @@ transition: all 4s;
 
 
 
+
+
+
+
+#nav>ul{
+    position: relative;
+     
+}
 
 #nav>ul{
     

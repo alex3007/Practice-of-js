@@ -9,10 +9,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="less.css">
-     
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
-<script src="les.js"></script> 
+    <link rel="stylesheet" href="style.css">
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+
 </head>
 
 
@@ -31,7 +32,7 @@
                     <li><a href="#">Email</a></li>
                 </ul>
             </li>
-            
+
             <li><a href="#">О нас</a></li>
         </ul>
     </div>
@@ -41,18 +42,24 @@
         <div class="slider__slides">
             <img src="img/1.jpg" name="picture" width="500px" />
             <br />
-           </div>
-      
+        </div>
+        <a href="#" onclick="return nextImage()">Следующее изображение</a>
     </div>
 
-        <div class="card">
-       
-            <img class="card-img-top" src="img/1.jpg" name="picture" />
-            <br />
-           
-        
-     <a href="#" onclick="return nextImage()">Следующее изображение</a>
+    <div class="card">
+
+        <img class="card-img-top" src="img/1.jpg" name="picture" />
+        <br />
+
+
     </div>
+
+    <div id="result">
+        0
+    </div>
+
+
+    <script src="effects.js"></script>
 
 </body>
 
