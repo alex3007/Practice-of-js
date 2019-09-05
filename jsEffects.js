@@ -29,20 +29,6 @@ $("a").css("color", "darkblue");
          setTimeout (funcUp, 60);
      }, 60); 
         
-   /*     
-        op = 1;
-                
-        
-     setTimeout(function funcDown() {
-         if (op < 1) 
-             return;
-         el.style.opacity = op;
-         op -= 0.1;
-         setTimeout (funcDown, 60);
-     }, 60);    
-*/
-    
-        
         curId++;
               
         if (ar.length > curId) {
