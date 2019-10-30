@@ -1,77 +1,58 @@
-                                                        /* Slider */
-#slider {
-    width: 100%;
-    height: 100%;
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/****************/
+
+#nav > ul {
     position: relative;
-    overflow: hidden;
-    padding-top: 60px;
 }
 
-@keyframes load {
-    from {
-        left: -100%;
-    }
-
-    to {
-        left: 0;
-    }
+#nav > ul {
+    margin-left: 200px;
 }
 
-/*.slider__slides {
-    height: 100%;
-    position: relative;
-    -webkit-animation: slide 10s infinite;
-    -moz-animation: slide 10s infinite;
-    animation: slide 10s infinite;
+#nav {
+    height: 20px;
 }
 
-.slider__slide {
-    width: 50%;
-    height: 100%;
+#nav ul {
+    list-style-type: none;
+}
+
+#nav > ul > li {
+    display: inline-block;
     float: left;
+    margin-right: 10px;
+    width: 100px;
     position: relative;
-    z-index: 1;
-    overflow: hidden;
 }
 
-.slider__slide img {
-    width: 100%;
-    height: 100%;
+#nav ul li ul li {
+    width: 100px;
+    height: 30px;
 }
 
-.slider__image {
-    width: 100%;
-    height: 100%;
+#nav li a {
+    display: block;
 }
 
-.slider__image img {
-    width: 100%;
-    height: 100%;
-}
-
-/* Contents */
-.slider__content {
-    width: 100%;
-    height: 100%;
+#nav li .bar {
+    display: none;
     position: absolute;
-    overflow: hidden;
+    top: 100%;
 }
 
-
-/* Animation */
-@-moz-keyframes slide {
-
-    from {opacity: 0;}
-    40%{opacity: 0;}
-    60%{opacity: 1;}
-    80%{opacity: 1}
-    to {opacity: 0;}
-
+#nav li:hover .bar {
+    display: block;
+    z-index: 5;
 }
+/****************/
 
 .card{
     overflow: hidden;
-    
 }
 
 .card-img-top {
@@ -89,81 +70,8 @@ transition: all 4s;
   -moz-transform: scale(1.2, 1.2);
   -webkit-transform: scale(1.2, 1.2);
   transform: scale(1.2, 1.2);
-    
 }
 
 
-*{
-    
-    margin: 0;
-    padding: 0;
-}
-
-
-
-
-
-
-
-#nav>ul{
-    position: relative;
-     
-}
-
-#nav>ul{
-    
-    margin-left: 200px;
-      
-}
-
-#nav{
-    
-   height: 20px;
-      
-}
-
-#nav ul{
-    list-style-type: none;
-      
-}
-
-#nav>ul>li{
-    display: inline-block;
-    float: left;
-    margin-right: 10px;
-    width: 100px;
-    position: relative;
-      
-}
-
-
-#nav ul li ul li {
-    
-    width: 100px;
-    height: 30px;
-    
-    
-    
-}
-
-
-#nav li a {
-    display: block;
-    }
-
-
-
-#nav li .bar  {
-    display: none;
-    position: absolute;
-    top: 100%;
-  
-}
-
-#nav li:hover .bar {
-    display: block;
-    z-index: 5;
-    
-}
 
 

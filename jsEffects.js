@@ -1,46 +1,20 @@
-/*$().ready(function() {
 
-    
-$("a").css("color", "darkblue");
-    
-}*/
-
-    var ar = ["img/1.jpg","img/2.jpg","img/3.jpg","img/4.jpg"];
-    var curId = 0;
-    var el = document.getElementsByClassName("slider__slides")[0];
-    
-
-    setTimeout(loadSomething, 1000);
-    function loadSomething() {
-        $("#result").text(ar[curId]);
-        
-        
-        
-    op = 0;
-    el.style.opacity = 0;
-    
-   document.images["picture"].src = ar[curId];           
-          
-   setTimeout(function funcUp() {
-         if (op > 1) 
-             return;
-         el.style.opacity = op;
-         op += 0.05
-         setTimeout (funcUp, 60);
-     }, 60); 
-        
-        curId++;
-              
-        if (ar.length > curId) {
-            setTimeout(loadSomething, 2000);
-        }else if(ar.length == curId){
-            curId = 0;
-            setTimeout(loadSomething, 2000);
-            
-        };
-    }
+document.write('Привет!');
 
 
+//Создадим 1 массив
+var item1=['Автомобиль','Микроволновая печь'];
+//Создадим 2 массив
+var item2=['Стиральная машина'];
+//Создадим 3 массив
+var item3=['Пылесос'];
+//Объединим массивы и запишем результат в переменную item
+item=item1.concat(item3);
+//Выведем содержимое массива item на страницу.
+var i;
+for (i in item) {
+   document.write(i + ' элемент массива: ' + item[i] + '<br />');
+}
 
 
 /*  // parallax effect
@@ -95,24 +69,11 @@ $("a").css("color", "darkblue");
             direction: 'bottom'
         });
     })*/
-    
 
 
-****************************************************
 
-var locations = ["img/1.jpg","img/2.jpg","img/3.jpg","img/4.jpg"];
-var currentImage = 3;
 
-setTimeout(nextImage, 1000);
 
-    function nextImage() {
-        
-            currentImage++;
-            if (currentImage == locations.length){ 
-                currentImage = 0;
-                 }
-            
-          document.images["picture"].src = locations[currentImage];
-          return false;
-            
-        }}*/
+
+
+
