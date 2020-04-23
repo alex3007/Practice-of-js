@@ -72,8 +72,29 @@ for (i in item) {
 
 
 
+$('document').ready(function () {
+    
+ //blur effect
+    var el = $('.blur');
+    var a = 'blur(';
+    var b = ')';
+    var c = 'px)';
+    var i = 2;
+
+    (function () {
+        if (i > -0.5) {
+            el.css({
+                'filter': "progid: DXImageTransform.Microsoft.Blur(PixelRadius = '2')",
+                'filter': `${a}${i}${b}`,
+                '- webkit - filter': `${a}${i}${c}`
+            });
+            i -= 0.5;
+            setTimeout(arguments.callee, 60);
+        }
+    })();
 
 
+});
 
 
 
