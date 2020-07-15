@@ -1,100 +1,122 @@
+document.write('Practice1:');
 
-document.write('Привет!');
+// create div 
+let newDiv1 = document.createElement('div')
+let newBr1 = document.createElement('br')
+let newBr2 = document.createElement('br')
+document.body.appendChild(newDiv1);
+newDiv1.appendChild(newBr1);
 
-
-//Создадим 1 массив
-var item1=['Автомобиль','Микроволновая печь'];
-//Создадим 2 массив
-var item2=['Стиральная машина'];
-//Создадим 3 массив
-var item3=['Пылесос'];
-//Объединим массивы и запишем результат в переменную item
-item=item1.concat(item3);
-//Выведем содержимое массива item на страницу.
-var i;
-for (i in item) {
-   document.write(i + ' элемент массива: ' + item[i] + '<br />');
+//---------------------operations with arrays------------------------
+let array1 = ['p', 'b', 'c'];
+let array2 = [5, 2, 3];
+let array3 = ['friend'];
+document.write('1------concat------' + '<br/>')
+//-- method 'concat'
+let arraySum = array1.concat(array2, array3);
+let i;
+for (i in arraySum) {
+    document.write('-' + 'element' + i + ':' + arraySum[i] + '<br />');
 }
+document.write('2-----sort,pop,shift-------' + '<br/>')
+//-- method 'sort', 'pop'(delete last el),'shift'(delete first el)
+let arraySort = array1.sort();
+let arrayPop = arraySort.pop();
+for (i in arraySort) {
+    document.write('-' + 'element' + i + ':' + arraySort[i] + '<br />');
+}
+document.write('-' + 'element' + ':' + arrayPop + '<br />');
+
+let arrayShift = array2.shift();
+for (i in array2) {
+    document.write('-' + 'element' + i + ':' + array2[i] + '<br />');
+}
+document.write('-' + 'element' + ':' + arrayShift + '<br />');
+document.write('3-----slice-------' + '<br/>')
+//-- method 'slice'
+let arraySlice1 = arraySum.slice(1);
+for (i in arraySlice1) {
+    document.write('-' + 'element' + i + ':' + arraySlice1[i] + '<br />');
+}
+document.write('------------' + '<br/>')
+let arraySlice2 = arraySum.slice(0, 2);
+for (i in arraySlice2) {
+    document.write('-' + 'element' + i + ':' + arraySlice2[i] + '<br />');
+}
+document.write('------------' + '<br/>')
+let arraySlice3 = arraySum.slice(-2);
+for (i in arraySlice3) {
+    document.write('-' + 'element' + i + ':' + arraySlice3[i] + '<br />');
+}
+//-- method 'push','unshift'
+document.write('4------push,unshift------' + '<br/>')
+let array4 = array2.push(2);
+for (i in array2) {
+    document.write('-' + 'element' + i + ':' + array2[i] + '<br />');
+}
+let array5 = array1.unshift('g');
+for (i in array1) {
+    document.write('-' + 'element' + i + ':' + array1[i] + '<br />');
+}
+//-- method 'splice','delete'
+document.write('5----splice,delete--------' + '<br/>')
+let array6 = arraySum.splice(2,2);
+for (i in arraySum) {
+    document.write('-' + 'element' + i + ':' + arraySum[i] + '<br />');
+}
+delete arraySum[0];
+for (i in arraySum) {
+    document.write('-' + 'element' + i + ':' + arraySum[i] + '<br />');
+}
+//-- method 'split','reverse','join'
+document.write('6----split,reverse, join--------' + '<br/>')
+let array7 = array3[0].split('').reverse().join('');
+let array8 = array3[0];
+    document.write('-' + 'element' +  ':' + array7 + '<br />');
+    document.write('-' + 'element' +  ':' + array8 + '<br />');
+let array9 = array8.split('').sort().join('')
+document.write('-' + 'element' +  ':' + array9 + '<br />');
 
 
-/*  // parallax effect
-    $.fn.bgscroll = function (options) {
+//---------------------------------------------------------------------
+// createElement, create next div
+let newDiv2 = document.createElement('div');
+document.body.appendChild(newDiv2);
+newDiv2.className = 'practice2';
 
-        var x = $.extend({
-            bgpositionx: 50,
-            direction: "bottom",
-            debug: !1,
-            min: 0,
-            max: 100
-        }, options);
+// insertBefore, insert space before div
+document.body.insertBefore(newBr2, newDiv2);
 
-        var a = $(document).height() - $(window).height(),
-            b = a - (this.offset().top + this.height());
+// createTextNode, craete text and put into div
+let elem1 = document.createElement("h2");
+let newText = document.createTextNode('Practice2:');
+newDiv2.appendChild(elem1);
+elem1.appendChild(newText);
 
-        this.offset().top < a && (b = 0);
+// textContent, insert text
+let elem2 = document.createElement("p");
+elem2.textContent = "Inserted text";
+newDiv2.appendChild(elem2);
 
-        var c = (this.offset().top + this.height());
+// cloneNode, clone text and put it to body
+let div2 = document.querySelector("div.practice2");
+let firstElem = div2.firstChild.nextSibling;
+let title2 = firstElem.cloneNode(true);
+document.body.appendChild(title2);
 
-        if ($(window).scrollTop() > b && $(window).scrollTop() < c) {
-            var d = ($(window).scrollTop() - b) / (c - b) * 100;
+// find element and change style
+let nav2 = document.getElementsByClassName('practice2');
+nav2[0].style.background = 'red';
+let nav3 = document.getElementById('article');
+nav3.closest('.practice').style.background = 'yellow';
 
-            "top" == x.direction && (d = 100 - d),
-                d > x.max && (d = x.max),
-                d < x.min && (d = x.min);
+//removeChild, remove element
+let removeFromNode = document.querySelector("div.practice");
+let removableNode = document.querySelectorAll("div.practice p")[1];
+removeFromNode.removeChild(removableNode);
 
-            if (x.debug) {
-                console.log('Element background position: ' + d + ' %');
-            }
-        }
-
-        return this.css({
-            backgroundPosition: x.bgpositionx + '% ' + d + '%'
-        });
-    };
-
-
-    // parallax settings  
-    $(window).scroll(function () {
-        $('.bg-1').bgscroll({
-            direction: 'bottom', // bottom or top
-            bgpositionx: 50, // x positio, 0..100, in %, 50 is center
-            debug: false,  
-            min: 0, // min position(%) of moving
-            max: 100 // max position(%) of moving
-        });
-        $('.bg-2').bgscroll({
-            direction: 'top'
-        });
-        $('.bg-3').bgscroll({
-            direction: 'bottom'
-        });
-    })*/
-
-
-
-$('document').ready(function () {
-    
- //blur effect
-    var el = $('.blur');
-    var a = 'blur(';
-    var b = ')';
-    var c = 'px)';
-    var i = 2;
-
-    (function () {
-        if (i > -0.5) {
-            el.css({
-                'filter': "progid: DXImageTransform.Microsoft.Blur(PixelRadius = '2')",
-                'filter': `${a}${i}${b}`,
-                '- webkit - filter': `${a}${i}${c}`
-            });
-            i -= 0.5;
-            setTimeout(arguments.callee, 60);
-        }
-    })();
-
-
-});
-
-
-
+//replaceChild, replace element
+let oldNode = document.querySelectorAll("div.practice p")[0];
+let newNode = document.querySelectorAll("div.practice hr")[0];
+removeFromNode.replaceChild(newNode, oldNode)
+//-------------------------------------------------------------
